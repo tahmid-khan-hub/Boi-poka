@@ -1,14 +1,16 @@
 import React, { use } from 'react';
 import { FaStarHalfAlt } from "react-icons/fa";
+import { Link } from 'react-router';
 
 const Book = ({singleBook}) => {
 
     console.log(singleBook);
 
-    const {bookName, author, publisher, image, rating, category, tags, yearOfPublishing} = singleBook;
+    const {bookName, bookId, publisher, image, rating, category, tags, yearOfPublishing} = singleBook;
 
     return (
-        <div>
+        <Link to={`bookDetails/${bookId}`}>
+            <div>
             <div className="card bg-base-100 w-96 shadow-sm border p-5">
             <figure className='p-4 bg-gray-100 w-2/3 mx-auto '>
                 <img
@@ -39,6 +41,7 @@ const Book = ({singleBook}) => {
             </div>
             </div>
         </div>
+        </Link>
     );
 };
 
